@@ -39,5 +39,3 @@ jobs:
 
       - name: Generate Lunaria Overview
         uses: yanthomasdev/lunaria-action@main
-        with:
-          token: ${{ secrets.FREDKBOT_GITHUB_TOKEN }}
