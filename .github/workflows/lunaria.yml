@@ -11,6 +11,10 @@ permissions:
   contents: read
   pull-requests: write
 
+defaults:
+  run:
+    working-directory: ./docs
+
 jobs:
   lunaria-overview:
     name: Generate Lunaria Overview
@@ -23,6 +27,7 @@ jobs:
           # Necessary for Lunaria to work properly
           # Makes the action clone the entire git history
           fetch-depth: 0
+          working-directory: ./docs
 
       - name: Setup PNPM
         uses: pnpm/action-setup@v3
