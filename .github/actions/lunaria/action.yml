@@ -4,7 +4,7 @@ author: Yan Thomas
 
 runs:
   using: node20
-  main: ./.github/actions/lunaria/test.mjs
+  main: test.mjs
 
 inputs:
   token:
