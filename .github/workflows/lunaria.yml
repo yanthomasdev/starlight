@@ -27,7 +27,6 @@ jobs:
           # Necessary for Lunaria to work properly
           # Makes the action clone the entire git history
           fetch-depth: 0
-          working-directory: ./docs
 
       - name: Setup PNPM
         uses: pnpm/action-setup@v3
@@ -37,10 +36,12 @@ jobs:
         with:
           node-version: 20
           cache: pnpm
-    
+
       - name: Install dependencies
         run: pnpm install
         shell: bash
 
       - name: Generate Lunaria Overview
-        uses: yanthomasdev/lunaria-action@main
+        uses: ./.github/actions/lunaria
+        with:
+          working-directory: docs
